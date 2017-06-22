@@ -14,10 +14,14 @@ Ao Utilizarmos o Code Blocks podemos fazer das seguinte maneiras:
 * Criar o projeto do tipo **Console Application**;
 * Cria uma pasta **Source** dentro do Projeto e clonar o arquivo para ele;
 * Adicionar os arquivos no projeto.
+* Copiar uma pasta de **instâncias** para a pasta do projeto
 
 Disposição das pastas:
 ```
 Projeto/
+├── instancias/
+│   ├── grafo.txt
+│   ├── *.txt
 ├── Source/
 │   ├── main.cpp
 │   ├── *.cpp
@@ -30,6 +34,7 @@ Projeto/
 * Criar um projeto do tipo **Console Application** dentro da pasta Source (pasta do repositório);
 * Adicionar os arquivos no projeto;
 * Adicionar a pasta do projeto no arquivo `.gitignore`.
+* Copiar uma pasta de **instâncias** para a pasta do projeto
 
 Disposição das pastas:
 ```
@@ -40,6 +45,9 @@ Source/
 ├── Cpp_Application/
 │   ├── Cpp_Application.cbp
 │   ├── ... (outros arquivos do projeto)
+│   ├── instancias/
+│   │   ├── grafo.txt
+│   │   ├── *.txt
 ```
 
 ### Netbeans

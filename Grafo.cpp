@@ -498,7 +498,7 @@ bool Grafo::isDigraph() {
  * @return true - se grafo é multigrafo.
  *        false - se grafo NAO é multigrafo.
  */
-bool isMultigrafo1(){
+bool Grafo::isMultigrafo1(){
     noAux = noRaiz;
     Aresta *arestaAux2; 
     while(noAux != NULL){
@@ -513,7 +513,7 @@ bool isMultigrafo1(){
             }
             arestaAux = arestaAux->getProxAresta();
         }
-        noAux = noAux->getProximo();
+        noAux = noAux->getProxNo();
     }
     return false;
 }
@@ -522,7 +522,7 @@ bool isMultigrafo1(){
  * @return true - se grafo é multigrafo.
  *        false - se grafo NAO é multigrafo.
  */
-bool isMultigrafoLaco(){
+bool Grafo::isMultigrafoLaco(){
     noAux = noRaiz;
     Aresta *arestaAux2; 
     while(noAux != NULL){
@@ -539,7 +539,7 @@ bool isMultigrafoLaco(){
             }
             arestaAux = arestaAux->getProxAresta();
         }
-        noAux = noAux->getProximo();
+        noAux = noAux->getProxNo();
     }
     return false;
 }
@@ -1214,6 +1214,42 @@ string Grafo::menorCaminhoFloyd(int noA, int noB) {
         }
     }
     return auxSS.str();
+}
+
+string Grafo::dadosObtidosFloyd() {
+
+    int tam = getOrdem();
+
+    auxSS.str(string());
+    auxSS << "Dados obtidos com o Algoritmo de Floyd \n\n";
+
+
+    int** dist; //matriz com distancias menores de um no ao outro
+    dist = constroiFloyd(tam, dist);
+
+    int excentricidade[tam] = {0};
+    int raio = 0;
+    int diametro = 0;
+    vector<int> periferia;
+
+    for ( int i = 0; i < tam; i++ ) {
+        for ( int j = 0; j < tam; j++ ) {
+
+            int indice = dist[i][j];
+            if ( indice > 0 && indice < INFINITO ) {
+
+                if ( excentricidade[i] < indice )
+                    excentricidade[i] = indice;
+
+                if ( diametro < indice )
+                    diametro = indice;
+
+                if ( raio > indice )
+                    raio = indice;
+
+            }
+
+        }
 }
 
 //------------------- Arvore Geradora Minima ------------------

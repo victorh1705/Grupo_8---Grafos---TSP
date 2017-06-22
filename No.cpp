@@ -15,6 +15,7 @@ No::No(int name) {
     this->primeiraAresta = NULL;
     this->ultimaAresta = NULL;
     this->searchInfo = NULL;
+    this->group = 0;
 }
 
 No::No(int name, int peso) {
@@ -27,6 +28,7 @@ No::No(int name, int peso) {
     this->primeiraAresta = NULL;
     this->ultimaAresta = NULL;
     this->searchInfo = NULL;
+    this->group = 0;
 }
 
 No::~No() {
