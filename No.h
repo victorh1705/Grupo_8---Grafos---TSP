@@ -60,6 +60,7 @@ private:
     Aresta *primeiraAresta;
     Aresta *ultimaAresta;
     SearchInfo *searchInfo;
+    int group;
 };
 
 #endif // NO_H

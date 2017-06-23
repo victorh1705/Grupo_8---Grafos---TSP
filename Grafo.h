@@ -52,7 +52,7 @@ public:
     bool isNULL();
     bool isDigraph();
     bool isCompleto();
-    bool isBipartido(No *n, bool b);
+    bool isBipartido();
     bool isBipartidoUm(No *n, bool b);
     bool isBipartidoDois(No *n, bool b);
     bool isConexo();
@@ -63,6 +63,8 @@ public:
     string sequenciaGrau();
     string informacoesNos();
     string estruturaGrafoEmMemoria();
+    bool isMultigrafo1();
+    bool isMultigrafoLaco();
     
     //--- Busca em Profundidade ---
     void updateSearchInfo();
@@ -77,6 +79,7 @@ public:
     string caminhoMaisCurtoDijkstra(int noA, int noB);
     string menorCaminhoFloyd();
     string menorCaminhoFloyd(int noA, int noB);
+    string dadosObtidosFloyd();
     
     //--- Arvore Geradora Minima ---
     string agmPRIM(int noNome);

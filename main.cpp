@@ -1131,7 +1131,6 @@ string grafoEuleriano() {
 string informacoesGrafo() {
     string filename = "Grafo e suas informacoes.txt";
     string fileText = grafo->dadosObtidosFloyd();
-
     return gerarArquivoTexto(fileText, filename);
 }
 
