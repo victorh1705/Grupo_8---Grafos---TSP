@@ -20,41 +20,41 @@
 class EdgeSearchInfo {
 public:
     EdgeSearchInfo();
-    EdgeSearchInfo( No* node, Aresta* edge);
+    EdgeSearchInfo(No* node, Aresta* edge);
     virtual ~EdgeSearchInfo();
-    
-    void SetWeigth(int weigth);
-    int GetWeigth();
-    
-    void SetDestinyNodeName(int destinyName);
-    int GetDestinyNodeName();
-    
+
+    void SetPeso(int weigth);
+    int GetPeso();
+
+    void SetNoDestinoName(int destinyName);
+    int GetNoDestinoName();
+
     void SetEdgeFather(Aresta* edge);
     Aresta* GetEdgeFather();
-    
-    void SetRootNodeName(int rootName);
-    int GetRootNodeName();
-    
-    void SetRootNode(No* root);
-    No* GetRootNode();
-    
+
+    void SetNoRaizName(int rootName);
+    int GetNoRaizName();
+
+    void SetNoRaiz(No* root);
+    No* GetNoRaiz();
+
     bool ifHas(int rootName, int destinyName);
     bool ifHas(int rootName);
-    
+
     bool hasVisited();
     bool hasBothVisited();
     bool hasBothInSolution();
-    
-    void setBoth( bool value);
+
+    void setBoth(bool value);
     
 private:
     No* noRaiz;
     int noRaizNome;
-    
+
     Aresta* arestaPai;
     int noDestinoNome;
-    
-    int peso; 
+
+    int peso;
 };
 
 #endif /* EDGESEARCHINFO_H */

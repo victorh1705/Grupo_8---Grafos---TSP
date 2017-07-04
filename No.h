@@ -3,7 +3,6 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "Grafo.h"
 #include "Aresta.h"
 #include "SearchInfo.h"
 

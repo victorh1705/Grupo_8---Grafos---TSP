@@ -28,19 +28,19 @@ EdgeSearchInfo::EdgeSearchInfo(No* node, Aresta* edge) {
 EdgeSearchInfo::~EdgeSearchInfo() {
 }
 
-void EdgeSearchInfo::SetWeigth(int weigth) {
+void EdgeSearchInfo::SetPeso(int weigth) {
     weigth = weigth;
 }
 
-int EdgeSearchInfo::GetWeigth() {
+int EdgeSearchInfo::GetPeso() {
     return peso;
 }
 
-void EdgeSearchInfo::SetDestinyNodeName(int destinyNodeName) {
+void EdgeSearchInfo::SetNoDestinoName(int destinyNodeName) {
     destinyNodeName = destinyNodeName;
 }
 
-int EdgeSearchInfo::GetDestinyNodeName() {
+int EdgeSearchInfo::GetNoDestinoName() {
     return noDestinoNome;
 }
 
@@ -52,19 +52,19 @@ Aresta* EdgeSearchInfo::GetEdgeFather() {
     return arestaPai;
 }
 
-void EdgeSearchInfo::SetRootNodeName(int rootNodeName) {
+void EdgeSearchInfo::SetNoRaizName(int rootNodeName) {
     rootNodeName = rootNodeName;
 }
 
-int EdgeSearchInfo::GetRootNodeName() {
+int EdgeSearchInfo::GetNoRaizName() {
     return noRaizNome;
 }
 
-void EdgeSearchInfo::SetRootNode(No* rootNode) {
+void EdgeSearchInfo::SetNoRaiz(No* rootNode) {
     rootNode = rootNode;
 }
 
-No* EdgeSearchInfo::GetRootNode() {
+No* EdgeSearchInfo::GetNoRaiz() {
     return noRaiz;
 }
 

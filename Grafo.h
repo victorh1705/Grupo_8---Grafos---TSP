@@ -12,32 +12,33 @@ using namespace std;
 
 class No;
 class Aresta;
+class VectorEdgeSearch;
 
 typedef vector<No*> NodeVector;
 
 class Grafo {
 public:
-    
+
     //--- Construtor e Destrutor ---
     Grafo(bool isDigrafo);
     virtual ~Grafo();
-    
+
     //--- Seters ---
     void setOrdemMaisUm();
     void setOrdemMenosUm();
-    
+
     //--- Funcoes do No ---
     bool procurarNoPeloNome(int nome);
     No *insereNo(int nome, int peso, bool update);
     bool removeNo(int nome);
     void removeNoComGrauZero();
-    
+
     //--- Funcoes de Aresta ---
     bool inserirAresta(int noFonteNome, int noDestinoNome, int pesoAresta);
     bool inserirAresta(No *noFonte, No *noDestino, int pesoAresta);
     int removeArestas(No *no, No *noDestino, bool removeAll, bool considerWeight, int peso);
     void removerAsArestasDoNo(No *no);
-    
+
     //--- Caracteristica do Grafo ---
     int getNumAresta();
     No *getNoRaiz();
@@ -65,26 +66,29 @@ public:
     string estruturaGrafoEmMemoria();
     bool isMultigrafo1();
     bool isMultigrafoLaco();
-    
+
     //--- Busca em Profundidade ---
     void updateSearchInfo();
     string arvoreBuscaProfundidade(int noNome);
     void buscaPronfudidade(No *no, int nivel, int connetedComponent);
-    
+
     //--- Busca em Largura ---
     string arvoreBuscaLargura(int noNome);
     void buscaLargura(No *no, int nivel, int connetedComponent);
-    
+
     //--- Algoritmo de Menor Caminho ---
     string caminhoMaisCurtoDijkstra(int noA, int noB);
     string menorCaminhoFloyd();
     string menorCaminhoFloyd(int noA, int noB);
     string dadosObtidosFloyd();
-    
+    int** constroiFloyd(int tam, int** dist);
+    int** listaAdjacencia(int tam, int** dist);
+
     //--- Arvore Geradora Minima ---
     string agmPRIM(int noNome);
     string agmKRUSKAL();
-    
+    VectorEdgeSearch* criaAGM(int noInicio);
+
     //--- Outros Algoritmos ---
     bool getNoDeArticulacao(int noNome);
     NodeVector getTodasNosArticulacao();
@@ -106,21 +110,21 @@ public:
     NodeVector mergeSortAllNodes();
     void mergeSort(int left, int right);
     void merge(int left, int middle, int right);
-    
-    
+
+
 private:
-    
+
     int ordem;
     int numAresta;
     bool digrafo;
     bool searchInfoUpdated;
     int componenteConexa;
-    
+
     No *noRaiz;
     No *noAux;
     No *noAuxAnterior;
     NodeVector auxVector;
-    
+
     Aresta *arestaAux;
     Aresta *arestaAuxAnterior;
     stringstream auxSS;

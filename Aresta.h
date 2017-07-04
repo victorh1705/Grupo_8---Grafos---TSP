@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string>
 #include "No.h"
-#include "Grafo.h"
 
 using namespace std;
 

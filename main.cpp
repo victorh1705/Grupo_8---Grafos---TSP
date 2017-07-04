@@ -7,11 +7,12 @@
 #include <vector>
 #include <ctime>
 
-#include "Aresta.h"
-#include "Grafo.h"
-#include "No.h"
-#include "vectorEdgeSearch.h"
 #include "FileManager.h"
+#include "Aresta.h"
+#include "No.h"
+#include "VectorEdgeSearch.h"
+#include "Grafo.h"
+#include "Tsp.h"
 
 using namespace std;
 typedef vector<No*> NodeVector;
@@ -1196,6 +1197,20 @@ string isDigraph() {
     }
 }
 
+string rodarAlgoritmoTSP() {
+
+    stringstream ss;
+    Tsp* algoritmo = new Tsp(grafo);
+
+    imprimeTitulo();
+    cout << "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n";
+    cout << "||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||";
+    imprimeSeparador();
+
+
+    return ss.str();
+}
+
 /**
  * Main function.
  * 
@@ -1381,7 +1396,7 @@ int main(int argc, char* argv[]) {
         } else if ( option == "33" ) {
             alert = componentesConexas();
             //        } else if ( option == "34" ) {
-            //                        alert = cartesianProductBetweenTwoGraphs();
+            //            alert = cartesianProductBetweenTwoGraphs();
         } else if ( option == "35" ) {
             alert = agmPRIM();
         } else if ( option == "36" ) {
