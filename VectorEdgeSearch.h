@@ -28,6 +28,9 @@ public:
     
     void insertEdgeSearch( EdgeSearchInfo* edgeSearchInfo);
     EdgeSearchInfo* containsEdge(EdgeSearchInfo* edgeSearchInfo);
+    bool containsAny(EdgeSearchInfo* edgeSearchInfo);
+    
+    vector<int> connectedWith(int conectado);
     
     EdgeSearchInfo* get(int position);
 

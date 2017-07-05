@@ -38,6 +38,7 @@ public:
     bool inserirAresta(No *noFonte, No *noDestino, int pesoAresta);
     int removeArestas(No *no, No *noDestino, bool removeAll, bool considerWeight, int peso);
     void removerAsArestasDoNo(No *no);
+    Aresta* getArestaAux();
 
     //--- Caracteristica do Grafo ---
     int getNumAresta();

@@ -25,6 +25,14 @@ EdgeSearchInfo::EdgeSearchInfo(No* node, Aresta* edge) {
     peso = edge->getPeso();
 }
 
+EdgeSearchInfo::EdgeSearchInfo(int raiz, int destino) {
+    noRaiz = NULL;
+    noRaizNome = raiz;
+    arestaPai = NULL;
+    noDestinoNome = destino;
+    peso = 0;
+}
+
 EdgeSearchInfo::~EdgeSearchInfo() {
 }
 

@@ -12,6 +12,7 @@
 #define INFINITO 999999
 
 typedef EdgeSearchInfo EdgeInfo;
+typedef VectorEdgeSearch VectorEdge;
 
 using namespace std;
 
@@ -22,6 +23,8 @@ public:
     
     void funcaoCriterio(double alfa);
     string reativoRandomizado(int iteracoes);
+    void criarCicloInicial(int noAInserir, int** floyd);
+
 
 private:
     Grafo* grafo;
@@ -29,6 +32,7 @@ private:
     stringstream AuxSS;
     
     VectorEdgeSearch* vetor;
+    VectorEdgeSearch* solucao;
     EdgeInfo* infoArestaAux;
     
     vector<int> coverSetLengthRandomizedReactiveGreedyAlgorithm;

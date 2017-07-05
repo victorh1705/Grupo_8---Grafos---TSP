@@ -15,6 +15,7 @@
 
 #include "VectorEdgeSearch.h"
 #include "EdgeSearchInfo.h"
+#include "Tsp.h"
 
 VectorEdgeSearch::VectorEdgeSearch() {
 }
@@ -61,13 +62,35 @@ void VectorEdgeSearch::insertEdgeSearch(EdgeSearchInfo* edgeSearchInfo) {
 }
 
 EdgeSearchInfo* VectorEdgeSearch::containsEdge(EdgeSearchInfo* edgeSearchInfo) {
-    for ( int i = 0; i < vetor.size(); i++ ) {
-        EdgeSearchInfo* edgeAux = vetor[i];
-        if( edgeAux->ifHas(edgeSearchInfo->GetNoRaizName(), edgeSearchInfo->GetNoDestinoName()) )
+    for ( EdgeSearchInfo* edgeAux : vetor ) {
+        if ( edgeAux->ifHas(edgeSearchInfo->GetNoRaizName(), edgeSearchInfo->GetNoDestinoName()) )
             return edgeAux;
     }
     return NULL;
 }
+
+bool VectorEdgeSearch::containsAny(EdgeSearchInfo* edgeSearchInfo) {
+    for ( int i = 0; i < vetor.size(); i++ ) {
+        EdgeSearchInfo* edgeAux = vetor[i];
+        if ( edgeAux->ifHas(edgeSearchInfo->GetNoRaizName()) || edgeAux->ifHas(edgeSearchInfo->GetNoDestinoName()) )
+            return true;
+    }
+    return false;
+}
+
+vector<int> VectorEdgeSearch::connectedWith(int conectado) {
+    vector<int> retorno;
+    for ( EdgeInfo* elem : vetor ) {
+        if ( elem->ifHas(conectado) ) {
+            if ( elem->GetNoDestinoName() == conectado )
+                retorno.push_back(elem->GetNoRaizName());
+            else
+                retorno.push_back(elem->GetNoDestinoName());
+        }
+    }
+    return retorno;
+}
+
 int VectorEdgeSearch::getSize() {
     vetor.size();
 }
@@ -134,7 +157,6 @@ void VectorEdgeSearch::relaxVector() {
 
     for ( int j = 0; j < vetor.size(); j++ ) {
         if ( vetor[j]->hasBothInSolution() ) {
-
             vetor.erase(vetor.begin() + j);
             --j;
         }

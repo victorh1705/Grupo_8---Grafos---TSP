@@ -21,6 +21,7 @@ class EdgeSearchInfo {
 public:
     EdgeSearchInfo();
     EdgeSearchInfo(No* node, Aresta* edge);
+    EdgeSearchInfo(int raiz, int destino);
     virtual ~EdgeSearchInfo();
 
     void SetPeso(int weigth);

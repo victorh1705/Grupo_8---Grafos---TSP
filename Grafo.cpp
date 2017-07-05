@@ -397,6 +397,13 @@ int Grafo::getOrdem() {
 }
 
 /**
+ * Retorna Aresta Aux.
+ */
+Aresta* Grafo::getArestaAux(){
+    return arestaAux;
+}
+
+/**
  * Retorna grau de entrada.
  */
 int Grafo::getGrauEntrada() {
